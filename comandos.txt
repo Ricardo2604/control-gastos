@@ -1,0 +1,1 @@
+npm i react-swipeable-list //instalar para editar los gastos
