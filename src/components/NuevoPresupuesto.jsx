@@ -20,12 +20,16 @@ const NuevoPresupuesto = ({
             return
         }
         setMensaje(' ')
-        setIsValidPresupuesto(true)
-
-        
-        
+        setIsValidPresupuesto(true)   
 
     };
+
+    const handleInputFocus = () => {
+        if (presupuesto === 0) {
+          setPresupuesto('');
+        }
+      };
+
   return (
     <div className='contenedor-presupuesto contenedor sombra'>
         <form 
@@ -37,9 +41,10 @@ const NuevoPresupuesto = ({
                 <input
                    className='nuevo-presupuesto'
                    type='number'
-                   placeholder='Añade Presupuesto'
+                   placeholder=''
                    value={presupuesto} 
                    onChange={ (e) => setPresupuesto(Number(e.target.value) ) }
+                   onFocus={handleInputFocus}
                 />
             </div>
 
